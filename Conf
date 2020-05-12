@@ -1,0 +1,34 @@
+
+public void
+showSelection()
+{
+String s = "";
+String coolDate = FileDate.toNormalString( selectedDate );
+
+if ( !coolDate.equals( "" ) && selectedRoom != null )
+{
+s = "Room " + Integer.toString( selectedRoom.room_nbr );
+s += ", Floor " + Integer.toString( selectedRoom.floor_nbr );
+s += " on " + coolDate;
+
+loadLists();
+}
+
+if ( coolDate.equals( "" ) && selectedRoom != null )
+{
+s = "Room " + Integer.toString( selectedRoom.room_nbr );
+s += ", Floor " + Integer.toString( selectedRoom.floor_nbr );
+}
+
+if ( !coolDate.equals( "" ) && selectedRoom == null )
+{
+s = coolDate;
+}
+
+if ( s.equals( "" ) )
+s = "Select a date and a room...";
+
+dateStatus.setText( s );
+}	
+
+
